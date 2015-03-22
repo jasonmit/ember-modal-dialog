@@ -1,3 +1,11 @@
-<h2 id='title'>Welcome to Ember.js</h2>
+<h2 id="title">Welcome to Ember.js</h2>
 
 {{outlet}}
+
+<button {{action "toggleModal"}}>Toggle Modal</button>
+
+{{#if isShowingModal}}
+  {{#modal-dialog}}
+    Oh hai there!
+  {{/modal-dialog}}
+{{/if}}
