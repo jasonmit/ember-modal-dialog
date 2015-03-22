@@ -3,7 +3,7 @@ import Ember from 'ember';
 var computed = Ember.computed;
 
 export default Ember.Component.extend({
-  classNames: ['modal-overlay-container'],
+  classNames: ['ember-modal-overlay-container'],
 
   translucent: false,
 

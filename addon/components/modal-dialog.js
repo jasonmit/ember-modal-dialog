@@ -6,7 +6,7 @@ var computed = Ember.computed;
 export default Ember.Component.extend({
   tagName: '', // positioned-container is the container you're looking for
   layout: template,
-  containerClassNames: ['modal-dialog'],
+  containerClassNames: ['ember-modal-dialog'],
   concatenatedProperties: ['containerClassNames'],
 
   alignmentTarget: null, // view instance, passed in

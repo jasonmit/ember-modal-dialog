@@ -1,11 +1,11 @@
-.ember-modal-panel {
+.ember-modal-dialog {
   z-index:51;
   position:fixed;
   border-radius:8px;
   background-color:#fff;
   box-shadow:0 0 10px #222;
 }
-.ember-modal-panel .pointer {
+.ember-modal-dialog .pointer {
   width: 0;
   height: 0;
   display: inline-block;
@@ -13,12 +13,12 @@
   position: absolute;
 }
 
-.ember-modal-panel .pointer.point-right {
+.ember-modal-dialog .pointer.point-right {
   border-left: 10px solid #404040;
 }
-.ember-modal-panel .pointer.point-left {
+.ember-modal-dialog .pointer.point-left {
   border-right: 10px solid #404040;
 }
-.ember-modal-panel .pointer.point-up {
+.ember-modal-dialog .pointer.point-up {
   border-bottom: 10px solid #404040;
 }

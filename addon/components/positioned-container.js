@@ -34,15 +34,14 @@ export default Ember.Component.extend({
 
   updateAlignment: function() {
     var alignmentTarget = this.get('alignmentTarget');
+    var originOffset = alignmentTarget && alignmentTarget.$().offset();
     var alignment = this.get('alignment');
     switch (alignment) {
       case 'left':
-        var originOffset = alignmentTarget.$().offset();
         this.$().css('left', originOffset.left)
           .css('top', originOffset.top);
         break;
       case 'right':
-        var originOffset = alignmentTarget.$().offset();
         var width = alignmentTarget.$().outerWidth();
         this.$().css('left', originOffset.left + width)
           .css('top', originOffset.top);
@@ -52,8 +51,8 @@ export default Ember.Component.extend({
         var elementHeight = this.$().outerHeight();
         this.$().css('left', '50%')
           .css('top', '50%')
-          .css('margin-left', elementWidth * -.5)
-          .css('margin-top', elementHeight * -.5);
+          .css('margin-left', elementWidth * -0.5)
+          .css('margin-top', elementHeight * -0.5);
         break;
     }
   }
