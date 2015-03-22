@@ -1,8 +1,10 @@
 import Ember from 'ember';
+import template from '../templates/components/overlay';
 
 var computed = Ember.computed;
 
 export default Ember.Component.extend({
+  layout: template,
   classNames: ['ember-modal-overlay-container'],
 
   translucent: false,

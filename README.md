@@ -1,5 +1,7 @@
 # Ember-modal-dialog
 
+TODO: Note requires Ember >= 1.11.0-beta.5
+
 This README outlines the details of collaborating on this Ember addon.
 
 ## Installation
