@@ -4,9 +4,9 @@ var computed = Ember.computed;
 
 export default Ember.Component.extend({
 
-  alignmentTarget: null, // view instance, passed in
+  alignmentTarget: null, // element selector, passed in
   alignment: null, // passed in; valid values are:
-                   // left, right (relative to alignmentTarget)
+                   // left, right, top, bottom (relative to alignmentTarget)
                    // center (relative to container)
   isPositioned: computed('alignmentTarget', function(){
     if (this.get('alignmentTarget') && this.get('alignment')) {
@@ -32,23 +32,43 @@ export default Ember.Component.extend({
     }
   }.observes('isPositioned').on('didInsertElement'),
 
+  //TODO: Add resize and scroll handlers
   updateAlignment: function() {
     var alignmentTarget = this.get('alignmentTarget');
-    var originOffset = alignmentTarget && alignmentTarget.$().offset();
+    var originOffset = alignmentTarget && Ember.$(alignmentTarget).offset();
     var alignment = this.get('alignment');
+
+    var originOffsetTop;
+    if (originOffset) {
+      originOffsetTop = originOffset.top - Ember.$(window).scrollTop();
+    }
+    var elementWidth, elementHeight, targetWidth, targetHeight;
+    elementWidth = this.$().outerWidth();
     switch (alignment) {
       case 'left':
-        this.$().css('left', originOffset.left)
-          .css('top', originOffset.top);
+        this.$().css('left', originOffset.left - elementWidth)
+          .css('top', originOffsetTop);
         break;
       case 'right':
-        var width = alignmentTarget.$().outerWidth();
-        this.$().css('left', originOffset.left + width)
-          .css('top', originOffset.top);
+        targetWidth = Ember.$(alignmentTarget).outerWidth();
+        this.$().css('left', originOffset.left + targetWidth)
+          .css('top', originOffsetTop);
+        break;
+      case 'bottom':
+        targetWidth = Ember.$(alignmentTarget).outerWidth();
+        targetHeight = Ember.$(alignmentTarget).outerHeight();
+        this.$().css('left', (originOffset.left + targetWidth/2 - elementWidth/2))
+          .css('top', originOffsetTop + targetHeight);
+        break;
+      case 'top':
+        targetWidth = Ember.$(alignmentTarget).outerWidth();
+        elementHeight = this.$().outerHeight();
+        this.$().css('left', (originOffset.left + targetWidth/2 - elementWidth/2))
+          .css('top', originOffsetTop - elementHeight);
         break;
       case 'center':
-        var elementWidth = this.$().outerWidth();
-        var elementHeight = this.$().outerHeight();
+        elementWidth = this.$().outerWidth();
+        elementHeight = this.$().outerHeight();
         this.$().css('left', '50%')
           .css('top', '50%')
           .css('margin-left', elementWidth * -0.5)

@@ -10,6 +10,7 @@
     {{#modal-dialog close='toggleBasic'}}
       <h1>Stop! Modal Time!</h1>
       <p>Basic</p>
+      <button {{action 'toggleBasic'}}>Close</button>
     {{/modal-dialog}}
   {{/if}}
 </div>
@@ -24,6 +25,7 @@
                     translucentOverlay=true}}
       <h1>Stop! Modal Time!</h1>
       <p>Centered with Translucent Overlay</p>
+      <button {{action 'toggleTranslucent'}}>Close</button>
     {{/modal-dialog}}
   {{/if}}
 </div>
@@ -39,6 +41,22 @@
                     overlayClassNames='custom-styles-modal' }}
       <h1>Stop! Modal Time!</h1>
       <p>Custom Styles</p>
+      <button {{action 'toggleCustomStyles'}}>Close</button>
+    {{/modal-dialog}}
+  {{/if}}
+</div>
+
+<div class='example'>
+  <h2>Alignment Target</h2>
+  <button id='alignModalToMe' {{action 'toggleAlignmentTarget'}}>Do It</button>
+  {{code-snippet name='alignment-target.hbs'}}
+  {{#if isShowingAlignmentTarget}}
+    {{#modal-dialog close='toggleAlignmentTarget'
+                    alignment='right'
+                    alignmentTarget='#alignModalToMe' }}
+      <h1>Stop! Modal Time!</h1>
+      <p>Alignment Target</p>
+      <button {{action 'toggleAlignmentTarget'}}>Close</button>
     {{/modal-dialog}}
   {{/if}}
 </div>

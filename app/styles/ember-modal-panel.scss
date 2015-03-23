@@ -6,20 +6,3 @@
   box-shadow: 0 0 10px #222;
   padding: 10px;
 }
-.ember-modal-dialog .pointer {
-  width: 0;
-  height: 0;
-  display: inline-block;
-  border: 7px solid transparent;
-  position: absolute;
-}
-
-.ember-modal-dialog .pointer.point-right {
-  border-left: 10px solid #404040;
-}
-.ember-modal-dialog .pointer.point-left {
-  border-right: 10px solid #404040;
-}
-.ember-modal-dialog .pointer.point-up {
-  border-bottom: 10px solid #404040;
-}
