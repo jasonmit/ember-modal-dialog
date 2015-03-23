@@ -16,15 +16,14 @@
 </div>
 
 <div class='example'>
-  <h2>Centered with Translucent Overlay</h2>
+  <h2>With Translucent Overlay</h2>
   <button {{action 'toggleTranslucent'}}>Do It</button>
-  {{code-snippet name='centered-with-translucent-overlay.hbs'}}
+  {{code-snippet name='with-translucent-overlay.hbs'}}
   {{#if isShowingTranslucent}}
     {{#modal-dialog close='toggleTranslucent'
-                    alignment='center'
                     translucentOverlay=true}}
       <h1>Stop! Modal Time!</h1>
-      <p>Centered with Translucent Overlay</p>
+      <p>With Translucent Overlay</p>
       <button {{action 'toggleTranslucent'}}>Close</button>
     {{/modal-dialog}}
   {{/if}}

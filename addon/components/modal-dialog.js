@@ -11,7 +11,7 @@ export default Ember.Component.extend({
   concatenatedProperties: ['containerClassNames', 'overlayClassNames'],
 
   alignmentTarget: null, // view instance, passed in
-  alignment: 'left', // passed in
+  alignment: 'center', // passed in
   isPositioned: computed.notEmpty('alignmentTarget'),
   hasOverlay: true,
   translucentOverlay: false,
