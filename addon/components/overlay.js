@@ -5,7 +5,20 @@ var computed = Ember.computed;
 
 export default Ember.Component.extend({
   layout: template,
-  classNames: ['ember-modal-overlay-container'],
+  tagName: '',
+  overlayClassNamesString: computed('overlayClassNames.[]', 'translucent', function() {
+    var overlayClassNames = this.get('overlayClassNames');
+    var cns = [];
+    if (this.get('translucent')) {
+      cns.push('translucent');
+    }
+    if (overlayClassNames) {
+      cns.push(this.get('overlayClassNames').join(' '));
+    }
+    if (cns) {
+      return cns.join(' ');
+    }
+  }),
 
   translucent: false,
 

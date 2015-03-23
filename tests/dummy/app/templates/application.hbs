@@ -1,4 +1,4 @@
-<h2 id="title">Welcome to Ember.js</h2>
+<h2 id="title">Ember Modal Dialog</h2>
 
 {{outlet}}
 
@@ -6,7 +6,10 @@
 
 {{#if isShowingModal}}
   {{#modal-dialog alignment='center'
-                  translucentOverlay=true}}
+                  overlayClassNames='red-wedding'
+                  containerClassNames='red-container'
+                  hasOverlay=true
+                  close='toggleModal'}}
     Oh hai there!
   {{/modal-dialog}}
 {{/if}}

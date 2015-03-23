@@ -1,2 +1,4 @@
-<div class='ember-modal-overlay {{if translucent 'translucent'}}' {{action 'close'}}></div>
+{{#if hasOverlay}}
+  <div class={{overlayClassNamesString}} {{action 'close'}}></div>
+{{/if}}
 {{yield}}

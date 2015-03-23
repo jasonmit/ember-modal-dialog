@@ -1,8 +1,48 @@
-# Ember-modal-dialog
+# Ember Modal Dialog
+
+The ember-modal-dialog addon provides components to implement modal dialogs throughout an Ember application using a simple, consistent pattern.
+
+### Example Usage
+
+**Template**
+
+```handlebars
+<button {{action "toggleModal"}}>Toggle Modal</button>
+
+{{#if isShowingModal}}
+  {{#modal-dialog alignment='center'
+                  translucentOverlay=true}}
+    Oh hai there!
+  {{/modal-dialog}}
+{{/if}}
+```
+
+**Controller**
+
+```javascript
+import Ember from 'ember';
+
+export default Ember.Controller.extend({
+  isShowingModal: false,
+  actions: {
+    toggleModal: function(){
+      this.toggleProperty('isShowingModal');
+    }
+  }
+});
+```
+
+## Wormholes
+
+While modal dialogs are...
+
+## Styles
+
+Ember Modal Dialog provides default styles...
+
+## Dependencies
 
 TODO: Note requires Ember >= 1.11.0-beta.5
-
-This README outlines the details of collaborating on this Ember addon.
 
 ## Installation
 
