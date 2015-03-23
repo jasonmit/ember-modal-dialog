@@ -1,0 +1,16 @@
+.custom-styles-modal {
+  background: blue;
+  filter: alpha(opacity=15);
+  opacity: 0.77;
+  z-index: 100000;
+}
+
+.custom-styles-modal-container {
+  background: #222;
+  color: white;
+  position: fixed;
+  right: 10px;
+  top: 10px;
+  width: 300px;
+  z-index: 100000;
+}

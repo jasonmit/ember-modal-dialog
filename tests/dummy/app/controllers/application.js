@@ -1,10 +1,18 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
-  isShowingModal: false,
+  isShowingBasic: false,
+  isShowingTranslucent: false,
+  isShowingCustomStyles: false,
   actions: {
-    toggleModal: function(){
-      this.toggleProperty('isShowingModal');
+    toggleBasic: function(){
+      this.toggleProperty('isShowingBasic');
+    },
+    toggleTranslucent: function(){
+      this.toggleProperty('isShowingTranslucent');
+    },
+    toggleCustomStyles: function(){
+      this.toggleProperty('isShowingCustomStyles');
     }
   }
 });
